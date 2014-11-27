@@ -7,7 +7,14 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'Home', root_path, class: 'navbar-brand'
-    .collapse.navbar-collapse
+      = link_to 'Leaderboard', leaderboard_path, class: 'navbar-brand'
+    - if user_signed_in?
+      = link_to new_workout_path, :class => 'btn btn-default navbar-btn' do
+        %span.glyphicon.glyphicon-plus
+        New Workout
+    .collapse.navbar-collapse.navbar-right
+      - if user_signed_in?
+        %p.navbar-text
+          Howdy, #{current_user.name}!
       %ul.nav.navbar-nav
         = render 'layouts/navigation_links'

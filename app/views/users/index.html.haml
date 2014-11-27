@@ -1,0 +1,19 @@
+.page-header
+  %h1 Leaderboard
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Rank
+        %th Name
+        %th Distance
+
+    %tbody
+      - @users.each_with_index do |user, index|
+        %tr{class: ('success' if user == current_user)}
+          %td= index + 1
+          %td= user.name
+          %td
+            = user.distance
+            (#{user.workouts_count})

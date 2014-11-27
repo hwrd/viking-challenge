@@ -1,0 +1,9 @@
+= simple_form_for(@workout) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :date, collection: workout_form_start_date..Settings.end_date
+    = f.input :distance
+
+  .form-actions
+    = f.button :submit

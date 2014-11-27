@@ -10,14 +10,22 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'activeadmin', :github=>"gregbell/active_admin"
+gem 'devise'
 gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'omniauth'
-gem 'omniauth-github'
+gem 'omniauth-frontdesk', '~> 0.0.1'
 gem 'pg'
 gem 'simple_form'
 gem 'unicorn'
 gem 'unicorn-rails'
+gem 'rails_config'
+gem 'rollbar', '~> 1.2.6'
+
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -25,7 +33,11 @@ group :development do
   gem 'html2haml'
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'letter_opener'
+  gem 'bullet'
+  gem 'annotate', git: 'git://github.com/ctran/annotate_models.git'
 end
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
