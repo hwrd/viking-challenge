@@ -1,4 +1,5 @@
 ActiveAdmin.register Workout do
+  permit_params :user_id, :date, :distance
 
 
   # See permitted parameters documentation:
