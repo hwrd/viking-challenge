@@ -24,6 +24,7 @@ gem 'rails_config'
 gem 'rollbar', '~> 1.2.6'
 
 gem 'newrelic_rpm'
+gem 'health_check'
 
 group :production do
   gem 'rails_12factor'
